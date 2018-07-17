@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+    char str1[10], str2[10];
+    int len1, len2, iter, iter1, iter2, flag, temp=0;
+    scanf("%s %s", str1, str2);
+    len1=strlen(str1);
+    len2=strlen(str2);
+    if(len1!=len2)
+    {
+        printf("Not Anagrams");
+    }
+    else if((strcmp(str1, str2)==0))
+    {
+        printf("They are One and the Same!");
+    }
+    else
+    {
+        for(iter=0, temp=0; iter<len1; iter++)
+        {
+            for(iter1=0, flag=0; iter1<len2; iter1++)
+            {
+                if(str1[iter]==str2[iter1])
+                    flag=1;
+                //else
+                  //  flag=0;
+            }
+            if(flag==1)
+                temp+=1;
+        }
+        //printf("%d ",temp);
+        if(temp==len1)
+        {
+            printf("\nAnagrams!");
+        }
+        else
+            printf("\nNot Anagrams!");
+    }
+    return 0;
+}
+
+
